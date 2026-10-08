@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=240, height=320, user-scalable=no, initial-scale=1.0">
+  <title>Sphoorthi Seva KaiOS</title>
+  <link rel="stylesheet" href="css/kaios.css">
+</head>
+<body>
+  <!-- Header Pinned Top -->
+  <header id="header">
+    <span>Sphoorthi Seva</span>
+    <span style="font-size: 9px; opacity: 0.9;">Reg: 402/2021</span>
+  </header>
+
+  <!-- Scrollable D-Pad Content Container -->
+  <main id="content">
+    <!-- Trust Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-title">Nourishing Communities</div>
+      <div class="hero-desc">Daily Annadana meal drives & Vidya student kits in rural Karnataka.</div>
+    </div>
+
+    <!-- Live Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-label">Total Raised</div>
+        <div class="stat-val" id="stat-total">₹2,84,500</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Donors</div>
+        <div class="stat-val" style="color: #38bdf8;" id="stat-donors">48 Donors</div>
+      </div>
+    </div>
+
+    <!-- Focusable Quick Donate Button -->
+    <div class="focusable" id="btn-donate" tabindex="0">
+      <div style="font-weight: 800; color: #fb923c;">♥ Donate ₹500 Seva</div>
+      <div class="subtext">Provides hot nutritious meals for 15 children (80G Tax Free)</div>
+    </div>
+
+    <!-- Focusable Volunteer Option -->
+    <div class="focusable" id="btn-volunteer" tabindex="0">
+      <div style="font-weight: 800; color: #38bdf8;">Join Volunteer Roster</div>
+      <div class="subtext">Join 1,200+ active field volunteers for weekend camps</div>
+    </div>
+
+    <!-- Upcoming Civic Events Feed -->
+    <div class="section-title">Active Civic Drives</div>
+    <div id="events-container">
+      <div class="focusable" tabindex="0">
+        <div style="display:flex;justify-content:space-between;font-weight:bold;color:#f97316;font-size:10px;">
+          <span>15 OCT 2026</span>
+          <span style="color:#94a3b8;">Healthcare</span>
+        </div>
+        <div style="font-weight:bold;margin-top:2px;">Mega Blood Donation Drive</div>
+        <div class="subtext">Central Town Hall, Bengaluru</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Softkey Navigation Bar Pinned Bottom -->
+  <footer id="softkey-bar">
+    <span class="softkey" id="softkey-left">Donate</span>
+    <span class="softkey-center">SELECT</span>
+    <span class="softkey" id="softkey-right">Sync</span>
+  </footer>
+
+  <script src="js/dpad_navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

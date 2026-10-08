@@ -1,0 +1,6 @@
+{
+  "name": "Seva Sphoorthi Flutter Developer Hub",
+  "description": "An interactive workspace and live simulator to convert the Seva Sphoorthi NGO website into a production-ready Flutter mobile application with landing pages, mobile OTP authentication, and decoupled admin portal.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "seva-sphoorthi-kaios",
+  "version": "1.0.0",
+  "description": "KaiOS & JioPhone 240x320 lightweight application for Sphoorthi Seva Trust",
+  "scripts": {
+    "package": "zip -r sphoorthi-kaios.zip manifest.webapp index.html css js"
+  }
+}

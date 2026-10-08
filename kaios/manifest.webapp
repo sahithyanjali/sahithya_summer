@@ -1,0 +1,33 @@
+{
+  "name": "Sphoorthi Seva",
+  "description": "Public Charitable Trust mobile app for JioPhone and KaiOS devices. Track Annadana meals, civic blood drives, and donate with 80G tax exemption.",
+  "version": "1.0.0",
+  "launch_path": "/index.html",
+  "origin": "app://sevasphoorthi.kaios",
+  "theme_color": "#ea580c",
+  "icons": {
+    "56": "/icons/icon-56.png",
+    "112": "/icons/icon-112.png"
+  },
+  "developer": {
+    "name": "Sphoorthi Seva Trust",
+    "url": "https://sevasphoorthi.org"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Sphoorthi Seva",
+      "description": "Sphoorthi Seva Trust civic volunteer & donation portal."
+    },
+    "kn-IN": {
+      "name": "ಸ್ಫೂರ್ತಿ ಸೇವಾ",
+      "description": "ಸ್ಫೂರ್ತಿ ಸೇವಾ ಟ್ರಸ್ಟ್ ಸಮಾಜ ಸೇವೆ ಮತ್ತು ದಾನ ಪೋರ್ಟಲ್."
+    }
+  },
+  "default_locale": "en-US",
+  "type": "web",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to sync live donation statistics and relief camps."
+    }
+  }
+}

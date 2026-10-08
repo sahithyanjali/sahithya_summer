@@ -1,0 +1,16 @@
+{
+  "name": "seva-sphoorthi-testings",
+  "version": "1.0.0",
+  "description": "Comprehensive Automated Testing Suite for Sphoorthi Seva Trust (Reg: 402/2021) - Unit, Integration, E2E, and 10k Scalability Load Tests",
+  "type": "module",
+  "scripts": {
+    "test": "tsx runner.ts",
+    "test:unit": "tsx runner.ts --category=unit",
+    "test:integration": "tsx runner.ts --category=integration",
+    "test:e2e": "tsx runner.ts --category=e2e",
+    "test:load": "tsx runner.ts --category=load",
+    "test:watch": "tsx watch runner.ts"
+  },
+  "keywords": ["testing", "qa", "e2e", "unit-tests", "load-testing", "scalability", "seva-trust"],
+  "author": "Sphoorthi Seva Trust Quality Assurance Team"
+}

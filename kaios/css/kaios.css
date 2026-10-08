@@ -1,0 +1,150 @@
+/* KaiOS 240x320 Optimized Stylesheet */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+}
+
+body {
+  width: 240px;
+  height: 320px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  overflow: hidden;
+  position: relative;
+  font-size: 12px;
+}
+
+#header {
+  height: 28px;
+  background: linear-gradient(90deg, #ea580c, #c2410c);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #9a3412;
+}
+
+#content {
+  height: 262px;
+  overflow-y: scroll;
+  padding: 8px;
+  scrollbar-width: none;
+}
+#content::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-banner {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.hero-title {
+  color: #fb923c;
+  font-size: 12px;
+  font-weight: 800;
+}
+.hero-desc {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.stat-box {
+  background: #1e293b;
+  border-radius: 4px;
+  padding: 6px;
+  border: 1px solid #334155;
+}
+.stat-label {
+  font-size: 9px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.stat-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #22c55e;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #e2e8f0;
+  margin: 6px 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* KaiOS Focusable Item Styling */
+.focusable {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.focusable:focus,
+.focusable.focused {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  border-color: #fb923c !important;
+  outline: none;
+}
+
+.focusable:focus .stat-label,
+.focusable.focused .stat-label,
+.focusable:focus .subtext,
+.focusable.focused .subtext {
+  color: #fed7aa !important;
+}
+
+.subtext {
+  font-size: 9.5px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Softkey Bar */
+#softkey-bar {
+  height: 30px;
+  background: #020617;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.softkey {
+  color: #cbd5e1;
+  text-transform: uppercase;
+}
+.softkey-center {
+  color: #fb923c;
+  font-size: 11px;
+}

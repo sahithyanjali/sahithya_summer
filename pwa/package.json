@@ -1,0 +1,12 @@
+{
+  "name": "seva-sphoorthi-pwa",
+  "version": "1.0.0",
+  "description": "Progressive Web App package for Sphoorthi Seva Trust with offline Service Worker support",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.2.11"
+  }
+}

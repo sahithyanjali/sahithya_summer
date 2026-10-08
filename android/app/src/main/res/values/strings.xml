@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Seva Sphoorthi</string>
+    <string name="trust_name">Sphoorthi Seva Trust</string>
+    <string name="trust_reg">Reg: 402/2021</string>
+    <string name="tagline">Nourishing Lives, Empowering Communities</string>
+    <string name="donate">Donate Seva</string>
+    <string name="volunteer">Join as Volunteer</string>
+    <string name="tax_exempt_badge">80G Tax Exemption</string>
+</resources>

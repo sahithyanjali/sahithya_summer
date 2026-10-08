@@ -1,0 +1,13 @@
+# Podfile for Sphoorthi Seva Trust iOS App
+platform :ios, '16.0'
+use_frameworks!
+
+target 'SphoorthiApp' do
+  pod 'Alamofire', '~> 5.8'
+  pod 'Kingfisher', '~> 7.10'
+  pod 'SwiftyJSON', '~> 5.0'
+
+  target 'SphoorthiAppTests' do
+    inherit! :search_paths
+  end
+end
