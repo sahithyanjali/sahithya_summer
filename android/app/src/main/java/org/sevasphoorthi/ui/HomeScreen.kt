@@ -66,6 +66,55 @@ fun HomeScreen(onNavigateToDonate: () -> Unit) {
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            // Personalized Volunteer Dynamic Greeting
+            item {
+                val greeting = remember {
+                    val hour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+                    when (hour) {
+                        in 4..11 -> "Good morning"
+                        in 12..16 -> "Good afternoon"
+                        in 17..21 -> "Good evening"
+                        else -> "Good night"
+                    }
+                }
+                Card(
+                    shape = RoundedCornerShape(14.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 14.dp, vertical = 10.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column {
+                            Text("Welcome back,", fontSize = 11.sp, color = Color(0xFF64748B))
+                            Text(
+                                "$greeting, Sahithyanjali",
+                                fontWeight = FontWeight.ExtraBold,
+                                fontSize = 14.sp,
+                                color = Color(0xFF0F172A)
+                            )
+                        }
+                        Surface(
+                            color = Color(0xFFFFF7ED),
+                            shape = RoundedCornerShape(16.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFFED7AA))
+                        ) {
+                            Text(
+                                "Volunteer",
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFFC2410C)
+                            )
+                        }
+                    }
+                }
+            }
+
             // Hero Card
             item {
                 Card(

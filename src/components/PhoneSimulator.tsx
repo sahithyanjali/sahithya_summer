@@ -344,6 +344,33 @@ export default function PhoneSimulator({
     };
   }, []);
 
+  // Dynamic local phone time & greeting based on device/phone local time
+  const [phoneLocalTime, setPhoneLocalTime] = useState<string>(() => {
+    return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  });
+
+  const getDynamicGreeting = (): string => {
+    const hour = new Date().getHours();
+    if (hour >= 4 && hour < 12) {
+      return "Good morning";
+    } else if (hour >= 12 && hour < 17) {
+      return "Good afternoon";
+    } else if (hour >= 17 && hour < 22) {
+      return "Good evening";
+    } else {
+      return "Good night";
+    }
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPhoneLocalTime(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const [volunteerInitialTab, setVolunteerInitialTab] = useState<"opportunities" | "onboarding" | "schedule" | "notifications" | "impact">("opportunities");
+
   const gpsCoordinates = {
     bangalore_rural: { name: "Bangalore Rural Outskirts", coords: "13.2105° N, 77.3484° E", region: "Devenahalli Area", marker: "🌾 Rural School site" },
     nelamangala_suburbs: { name: "Nelamangala Green Hub", coords: "13.0970° N, 77.3915° E", region: "Vaidya Camp Ground", marker: "🩺 Medical tent venue" },
@@ -1555,7 +1582,7 @@ Thank you for your contribution in support of community service!
         className="bg-white text-slate-700 border-b border-slate-100 px-6 pt-3 pb-1 text-[11px] font-medium flex justify-between items-center shrink-0 z-50 relative cursor-pointer hover:bg-slate-50 transition-colors select-none"
         title="Tap to pull down Simulated Control Center"
       >
-        <span className="font-semibold text-slate-800">09:41 AM</span>
+        <span className="font-semibold text-slate-800">{phoneLocalTime}</span>
         <div className="flex items-center gap-1.5 font-sans font-bold">
           {airplaneMode && (
             <span className="text-orange-600 text-[10px]" title="Airplane Mode Active">✈️</span>
@@ -2031,7 +2058,8 @@ Thank you for your contribution in support of community service!
                 {/* Notifications Bell */}
                 <button
                   onClick={() => {
-                    navigateTo("faq");
+                    setVolunteerInitialTab("notifications");
+                    navigateTo("volunteer");
                     triggerHaptic("light");
                   }}
                   className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition cursor-pointer border border-white/20 shrink-0 relative"
@@ -3167,7 +3195,7 @@ Thank you for your contribution in support of community service!
                 <div className="min-w-0">
                   <p className="text-[10px] text-slate-500 font-medium">Welcome back,</p>
                   <h3 className="font-extrabold text-sm text-slate-900 truncate">
-                    Good morning, {authUser ? authUser.name.split(" ")[0] : "Sahithyanjali"}
+                    {getDynamicGreeting()}, {authUser ? authUser.name.split(" ")[0] : "Sahithyanjali"}
                   </h3>
                 </div>
               </div>
@@ -3224,7 +3252,11 @@ Thank you for your contribution in support of community service!
               </span>
               <div className="grid grid-cols-2 gap-2.5">
                 <button
-                  onClick={() => { navigateTo("programs"); triggerHaptic("light"); }}
+                  onClick={() => {
+                    setVolunteerInitialTab("opportunities");
+                    navigateTo("volunteer");
+                    triggerHaptic("light");
+                  }}
                   className="bg-white border border-slate-200/90 hover:border-orange-400 rounded-2xl p-3 flex items-center gap-3 shadow-2xs transition cursor-pointer active:scale-98"
                 >
                   <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-black text-sm shrink-0">
@@ -3236,7 +3268,11 @@ Thank you for your contribution in support of community service!
                   </div>
                 </button>
                 <button
-                  onClick={() => { navigateTo("volunteer"); triggerHaptic("light"); }}
+                  onClick={() => {
+                    setVolunteerInitialTab("schedule");
+                    navigateTo("volunteer");
+                    triggerHaptic("light");
+                  }}
                   className="bg-white border border-slate-200/90 hover:border-orange-400 rounded-2xl p-3 flex items-center gap-3 shadow-2xs transition cursor-pointer active:scale-98"
                 >
                   <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-black text-sm shrink-0">
@@ -3776,6 +3812,7 @@ Thank you for your contribution in support of community service!
           <VolunteerPortal 
             onBackToHome={() => navigateTo("home")} 
             triggerHaptic={triggerHaptic} 
+            initialTab={volunteerInitialTab}
           />
         )}
 

@@ -50,14 +50,22 @@ import {
 interface VolunteerPortalProps {
   onBackToHome?: () => void;
   triggerHaptic?: (style: "light" | "medium" | "heavy" | "success" | "warning") => void;
+  initialTab?: "opportunities" | "onboarding" | "schedule" | "notifications" | "impact";
 }
 
 export default function VolunteerPortal({ 
   onBackToHome, 
-  triggerHaptic 
+  triggerHaptic,
+  initialTab = "opportunities"
 }: VolunteerPortalProps) {
   // Navigation tabs: 'opportunities' | 'onboarding' | 'schedule' | 'notifications' | 'impact'
-  const [activeTab, setActiveTab] = useState<"opportunities" | "onboarding" | "schedule" | "notifications" | "impact">("opportunities");
+  const [activeTab, setActiveTab] = useState<"opportunities" | "onboarding" | "schedule" | "notifications" | "impact">(initialTab);
+
+  useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
 
   // Core Data States
   const [profile, setProfile] = useState<VolunteerProfile>(INITIAL_VOLUNTEER_PROFILE);
